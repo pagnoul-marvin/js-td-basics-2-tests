@@ -18,6 +18,70 @@ Par exemple,
 	* le 31 avril 2020 n'est PAS une date valide
 */
 
+let jour = parseInt(prompt("Entrez le jour"));
+let mois = parseInt(prompt("Entrez le mois"));
+let annee = parseInt(prompt("Entrez le année"));
+let isValid = true;
+
+do {
+      jour = parseInt(prompt('Entrez le jour'));
+      mois = parseInt(prompt('Entrez le mois'));
+      annee = parseInt(prompt('Entrez le année'));
+    if (isNaN(jour) || isNaN(mois) || isNaN(annee)) {
+        isValid = false;
+    }
+    if (jour < 1 || jour > 31) {
+        isValid = false;
+    }
+    if (mois < 1 || mois > 12) {
+        isValid = false;
+    }
+    if (annee < 1) {
+        isValid = false;
+    }
+
+    let isBissextile = false;
+
+    if (((annee % 4 === 0) && (!annee % 100 === 0)) || annee % 400 === 0) {
+        isBissextile = true;
+    }
+
+    switch (mois) {
+        case 2 :
+            if (isBissextile) {
+                if (jour > 29) {
+                    isValid = false;
+                }
+            } else {
+                if (jour > 28) {
+                    isValid = false;
+                }
+            }
+            break;
+        case 4 :
+        case 6 :
+        case 9 :
+        case 11 :
+            if (jour > 30) {
+                isValid = false;
+            }
+    }
+} while (isValid === false);
+
+
+
+
+//LIGNE DE ROUTE
+//isNAN() is not a number
+//jour entre 1 et 31
+//mois entre 1 et 12
+//année sup à 1
+
+//vérifier si 30 ou 31 jours (28,29 pour février (année bissextile))
+
+
+
+
 /* Aide supplémentaire
  - Vous pouvez stocker dans une varaible maxJours le nombre de jours autorisés pour chaque mois :
 	 - traiter le cas du mois de février où ce sera 28 ou 29 selon que l'année est bissextile ou pas ;

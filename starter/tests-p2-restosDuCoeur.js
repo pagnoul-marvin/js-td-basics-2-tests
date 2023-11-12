@@ -15,3 +15,27 @@ calcule et affiche la somme versée aux restos du cœur.
 - 200€ (remise de 20€, 2€ versés)
 - 1000€ (remise de 100€, 2€ versés)
 */
+
+
+const nomClient = prompt('Ecrivez vortre prénom');
+const nbreArticles = Number(prompt('Combien d\'articles voulez-vous ?'));
+const prix = nbreArticles * 5;
+const remise = prix - ((prix * 10) / 100);
+const remise2 = remise - ((remise * 10) / 100);
+const remiseSup = (remise * 10) / 100;
+
+if ((prix > 25) && (remise > 5) && (remiseSup <= 2)) {
+    console.log(`${nomClient} a acheté ${nbreArticles} articles au prix de ${prix} euros (remise de 10% = ${remise})
+    Le magasin offre 10% de votre remise (= ${remise2}) aux Restos Du Coeur : ${remiseSup} euros (max 2 euros)`);
+}
+else if ((prix > 25) && (remise > 5) && (remiseSup > 2)) {
+    console.log(`${nomClient} a acheté ${nbreArticles} articles au prix de ${prix} euros (remise de 10% = ${remise})
+    Le magasin offre 10% de votre remise (= ${remise2}) aux Restos Du Coeur : ${remiseSup} euros (max 2 euros) mais uniquement deux euros car faut pas déconner :)`);
+}
+else {
+    console.log(`${nomClient} a acheté ${nbreArticles} article(s) au prix de ${prix} euros`);
+}
+
+
+
+

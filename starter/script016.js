@@ -6,8 +6,8 @@
 Initalisez la variable firstName à John et la variable age à 14
 */
 
-var firstName = 'John';
-var age = 14;
+const firstName = 'John';
+let age = 14;
 
 // 16 - 1. L'opérateur ternaire
 
@@ -17,7 +17,15 @@ var age = 14;
 2. Testez en changeant l'âge de John (14 ans, 24 ans)
 */
 
-
+if (age === 14) {
+    console.log(`${firstName} boit des bières`);
+}
+else if (age === 24) {
+    console.log(`${firstName} boit des jus`);
+}
+else {
+    console.log(`${firstName} est trop vieux pour boire`);
+}
 
 /*
 MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou une autre valeur à une variable selon qu'une condition est remplie ou pas
@@ -38,7 +46,7 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
 
 /* 
 1. Initialisez la variable job à la valeur "instituteur"
-2. Utilisez un switch pour affciher :
+2. Utilisez un switch pour afficher :
 	- si la profession est professeur ou instituteur, "John enseigne la programmation aux enfants",
 	- si c'est chauffeur, "John conduit un taxi à Lisbonne",
 	- si c'est designer, "John conçoit de beaux sites web" et,
@@ -46,6 +54,20 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
 3. Testez les différents cas de figure en changeant la profession de John
 */
 
+const job = 'instituteur';
+switch (job) {
+    case "instituteur" || "professeur" :
+        console.log(`${firstName} enseigne la programmation aux enfants`);
+        break;
+    case "chauffeur" :
+        console.log(`${firstName} conduit un taxi à Lisbonne`);
+        break;
+    case "designer" :
+        console.log(`${firstName} conçoit de beaux sites web`);
+        break;
+    default :
+        console.log(`${firstName} fait autre chose`);
+}
 
 
 /* 
@@ -59,7 +81,20 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
 4. Testez avec un âge de 7 ans en enlevant la 2e instruction break pour voir ce que cela a comme impact
 */
 
-
+age = 56;
+switch (age) {
+    case "< 13" :
+        console.log(`${firstName} est un garçon`);
+        break;
+    case ">= 13 && < 20" :
+        console.log(`${firstName} est un ado`);
+        break;
+    case ">= 20 && < 30" :
+        console.log(`${firstName} est un jeune homme`);
+        break;
+    default :
+        console.log(`${firstName} est un homme`);
+}
 
 // Autre application de l'instruction switch
 
@@ -77,6 +112,23 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
  	 affichez "Je n'ai pas compris !"
 */
 
+const temps = prompt('Quel temps fait-il dehors ? Répondez par un des quatre mots suivants :\n' +
+    '  soleil, vent, pluie ou neige.') ;
+switch (temps) {
+    case "soleil" :
+        console.log('Sortez en t-shirt.');
+        break;
+    case "pluie" :
+        console.log('Sortez en blouson.');
+        break;
+    case "neige" :
+        console.log('Restez au chaud à la maison.');
+        break;
+    default :
+        console.log('Je n\'ai pas compris !');
+}
+
+
 // b) Switch sans break
 
 // L'instruction `break` fait sortir du bloc du switch.  On ne souhaite pas toujours sortir, dans ce cas, on peut ne pas mettre de `break`
@@ -85,6 +137,27 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
 1. Demandez à l'utilisateur d'entrer le numéro du jour de la semaine
 2. Affichez ensuite dans la console le message suivant : "Les jours suivants se sont déjà écoulés depuis le début de la semaine : …, …, …"
 */
+
+const day = prompt('Quel est le numéro du jour de la semaine ?');
+switch (day) {
+    case "1" :
+        console.log('Les jours suivants se sont déjà écoulés depuis le début de la semaine : Aucun');
+    case "2" :
+        console.log('Les jours suivants se sont déjà écoulés depuis le début de la semaine : Lundi');
+    case "3"  :
+        console.log('Les jours suivants se sont déjà écoulés depuis le début de la semaine : Lundi, Mardi');
+    case "4" :
+        console.log('Les jours suivants se sont déjà écoulés depuis le début de la semaine : Lundi, Mardi, Mercredi');
+    case "5" :
+        console.log('Les jours suivants se sont déjà écoulés depuis le début de la semaine : Lundi, Mardi, Mercredi, Jeudi');
+    case "6" :
+        console.log('Les jours suivants se sont déjà écoulés depuis le début de la semaine : Lundi, Mardi, Mercredi, Jeudi, Vendredi');
+    case "7" :
+        console.log('Les jours suivants se sont déjà écoulés depuis le début de la semaine : Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi');
+        break;
+    default :
+        console.log('Je n\'ai pas compris');
+}
 
 
 

@@ -21,10 +21,74 @@ alors que l'équipe de Mike a marqué 116, 94 et 123 points.
 BONNE CHANCE 😀
 */
 
-// sans bonus
+const point1John = 89;
+const point2John = 120;
+const point3John = 103;
+
+const point1Mike = 116;
+const point2Mike = 94;
+const point3Mike = 123;
+
+let moyenJohn = (point1John + point2John + point3John) /3; //104
+let moyenMike = (point1Mike + point2Mike + point3Mike) /3; //111
+
+if (moyenJohn > moyenMike) {
+    console.log(`L'équipe de John gagne avec ${moyenJohn} points`);
+}
+else {
+    console.log(`L'équipe de Mike gagne avec ${moyenMike} points`);
+}
 
 
+moyenJohn = 128;
+moyenMike = 100;
+if (moyenJohn > moyenMike) {
+    console.log(`L'équipe de John gagne avec ${moyenJohn} points`);
+}
+else if (moyenJohn === moyenMike) {
+    console.log(`L'équipe de Mike et de John sont ex-aequo avec ${moyenJohn} points`);
+}
+else {
+    console.log(`L'équipe de Mike gagne avec ${moyenMike} points`);
+}
 
-// avec bonus
+
+const point1Mary = 97;
+const point2Mary = 134;
+const point3Mary = 105;
+
+let moyenMary = (point1Mary + point2Mary + point3Mary) /3; //112
+
+moyenJohn = 104;
+moyenMike = 111;
+
+if ((moyenMary > moyenJohn) && (moyenMary > moyenMike)) {
+    console.log(`L'équipe de Mary gagne avec ${moyenMary} points`);
+}
+else if ((moyenJohn > moyenMike) && (moyenJohn > moyenMary)) {
+    console.log(`L'équipe de John gagne avec ${moyenJohn} points`);
+}
+else if ((moyenJohn === moyenMike) && (moyenJohn === moyenMary)) {
+    console.log(`L'équipe de John, Mike et de Mary sont ex-aequo avec ${moyenMary} points`);
+}
+else {
+    console.log(`L'équipe de Mike gagne avec ${moyenMike} points`);
+}
 
 
+moyenMike = 100;
+moyenMary = 100;
+moyenJohn = 100;
+
+if ((moyenMary > moyenJohn) && (moyenMary > moyenMike)) {
+    console.log(`L'équipe de Mary gagne avec ${moyenMary} points`);
+}
+else if ((moyenJohn > moyenMike) && (moyenJohn > moyenMary)) {
+    console.log(`L'équipe de John gagne avec ${moyenJohn} points`);
+}
+else if ((moyenJohn === moyenMike) && (moyenJohn === moyenMary)) {
+    console.log(`L'équipe de John, Mike et de Mary sont ex-aequo avec ${moyenMary} points`);
+}
+else {
+    console.log(`L'équipe de Mike gagne avec ${moyenMike} points`);
+}

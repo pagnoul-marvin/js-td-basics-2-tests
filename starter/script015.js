@@ -7,15 +7,25 @@
 (source : https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript/3043921-ajoutez-des-conditions)
 */
 
+
+
 // 15-1. - LES OPÉRATEURS LOGIQUES
 
 // 1°) L'opérateur logique ET
+
 
 /*
 1. Affichez dans la console le résultat de toutes les combinaisons possibles de true ET false
 2. Avant de lancer votre navigateur et d'ouvrir la console, notez ici pour chaque ligne le résultat attendu dans un commentaire
 */
 
+
+console.log(true); //true
+console.log(false); //false
+console.log(true && true); //true
+console.log(false && false); //false
+console.log(true && false); //false
+console.log(false && false); //false
 
 
 // Une condition qui utilise l'opérateur logique ET
@@ -25,7 +35,13 @@
 2. Testez si le nombre est dans l'intervalle [0, 100]. Autrement dit, testez si 0 <= nombre <= 100. Si c'est le cas, affichez "… est compris entre 0 et 100".
 */
 
-
+let nombre = Number(prompt('Entrez un nombre'));
+if ((nombre >= 0) && (nombre <= 100)) {
+    console.log(`${nombre} est compris entre 0 et 100`);
+}
+else {
+    console.log(`${nombre} n'est pas compris entre 0 et 100`);
+}
 
 // 2°) L'opérateur logique OU
 
@@ -34,7 +50,10 @@
 2. Avant de lancer votre navigateur et d'ouvrir la console, notez ici pour chauqe ligne le résultat attendu dans un commentaire
 */
 
-
+console.log(true || true); //true
+console.log(false || false); //false
+console.log(true || false); //true
+console.log(false || true); //true
 
 // Une condition qui utilise l'opérateur logique OU
 
@@ -43,13 +62,20 @@
 2. Testez si le nombre en dehors de l'intervalle [0, 100]. Si c'est le cas, affichez "… est en dehors de l'intervalle [0, 100]".
 */
 
-
+nombre = Number(prompt('Entrez un nombre'));
+if ((nombre < 0) || (nombre > 100)) {
+    console.log(`${nombre} n'est pas compris entre 0 et 100`);
+}
+else {
+    console.log(`${nombre} est compris entre 0 et 100`);
+}
 
 // 3°) L'opérateur logique NOT
 
 /* Affichez dans la console le résultat NOT true puis le résultat de NOT false */
 
-
+console.log(!true);
+console.log(!false);
 
 // Une condition qui utilise l'opérateur logique NOT
 
@@ -59,18 +85,34 @@
 */
 
 
+nombre = Number(prompt('Entrez un nombre'));
+if (!(nombre > 100)) {
+    console.log(`${nombre} est inférieur ou égal à 100`);
+}
+else {
+    console.log(`${nombre} est supérieur à 100`);
+}
 // 15-2. - LES ALTERNATIVES MULTIPLES
 
 // 1°) Imbriquer des conditions
 
-/* 
+/*
 1. Demandez à l'utilisateur d'entrer un nombre et stockez-le dans une variable nombre
 2. Si ce nombre est positif, affichez "… est positif", sinon (c'est donc qu'il est négatif ou nul), vous allez faire un sous-test :
-  1°) s'il est négatif, affichez "… est négatif", 
+  1°) s'il est négatif, affichez "… est négatif",
   2°) sinon, affichez "… est nul"
 */
 
-
+nombre = Number(prompt('Entrez un nombre'));
+if (nombre > 0) {
+    console.log(`${nombre} est positif`);
+}
+else if (nombre < 0) {
+    console.log(`${nombre} est négatif`);
+}
+else {
+    console.log(`${nombre} est nul`);
+}
 
 // 2°) Autre écriture pour le même test : le if / elseif / else
 
@@ -93,6 +135,22 @@ c) si elle a entre 20 et 30 ans, affichez "… est un jeune homme."
 d) sinon, affichez "… est un homme."
 */
 
+const fistName = prompt('Entrez votre prénom');
+const yourAge = prompt('Entrez votre âge');
+
+if (yourAge < 13) {
+    console.log(`${fistName} est un petit garçon`);
+}
+else if ((yourAge >= 13) && (yourAge < 20)) {
+    console.log(`${fistName} est un adolescent`);
+}
+else if ((yourAge >= 20) && (yourAge < 30)) {
+    console.log(`${fistName} est un jeune homme`);
+}
+else {
+    console.log(`${fistName} est un homme`);
+}
+
 
 
 // Autre application
@@ -110,4 +168,22 @@ e) dans tous les autres cas (si la personne n'a rien répondu de tout ça —
   c.-à-d. qu'elle n'a entré aucun de ces qautre mots-là), affichez "Je n'ai pas compris !"
 */
 
+const meteo = prompt('Quel temps fait-il dehors ? Répondez par un des quatre mots suivants :\n' +
+    '  soleil, vent, pluie ou neige."');
+
+if (meteo === "soleil") {
+    console.log('Sortez en t-shirt.');
+}
+else if (meteo === "vent") {
+    console.log('Sortez en pull.');
+}
+else if (meteo === "pluie") {
+    console.log('Sortez en blouson.');
+}
+else if (meteo === "neige") {
+    console.log('Restez au chaud à la maison.');
+}
+else {
+    console.log('Je n\'ai pas compris !');
+}
 
